@@ -1,0 +1,198 @@
+@charset "utf-8";
+/* logn.html CSS Document */
+html,body{
+  font-family:"Microsoft YaHei","Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  padding: 0;
+  margin: 0;
+  position:relative;
+}
+img {
+  vertical-align: middle;
+
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+}
+
+.container_bg{
+  width:100%;
+  height:100%;
+  background:url(../../assets/images/login_bg.png) no-repeat bottom center;
+  background-size: 100% auto;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: -1;
+}
+
+.container{
+  width: 470px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top:4%;
+}
+
+.login_logo{
+  width:100%;
+  margin-bottom:44px;
+  text-align:center;
+}
+
+ul.loginInput {
+  list-style: none;
+  width: 400px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.inputContainer {
+  position: relative;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #DCDFE6;
+  background-color:#fff;
+}
+
+.inputContainer:hover {
+  border-color: #C0C4CC;
+}
+
+
+.inputContainer.focus {
+  border-color: #ee7700;
+}
+
+.inputContainer.focus label {
+  display: none;
+}
+
+.inputContainer input {
+  position: relative;
+  left: 10px;
+  width: 380px;
+  height: 50px;
+  line-height: 42px;
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+  background: none;
+  outline: none;
+  font-size:16px;
+}
+
+.inputContainer .tipsPic {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  display: none;
+}
+
+.inputContainer.success {
+  border-color: #67C23A;
+}
+
+.inputContainer.error {
+  border-color: #FA5555;
+}
+
+.inputContainer.success .successTip,
+.inputContainer.error .errorTip {
+  display: inline;
+}
+
+.inputContainer label {
+  position: absolute;
+  font-size: 16px;
+  line-height: 20px;
+  top: 15px;
+  left: 10px;
+  color: #C0C4CC;
+}
+
+.forgetPassword {
+  line-height: 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.forgetPassword input {
+  display: none;
+}
+
+.forgetPassword label {
+  padding-left: 24px;
+  position: relative;
+  left: 6px;
+  background: url("../../assets/icons/checkboxNo.png") no-repeat 0 1px;
+}
+
+.forgetPassword label.checked {
+  background: url("../../assets/icons/checkboxYes.png") no-repeat 0 1px;
+}
+
+.forgetPassword label:hover {
+  color: #000;
+}
+
+.forgetPassword a {
+  float: right;
+  text-decoration: none;
+  color: #ee7700;
+}
+
+.forgetPassword a:hover {
+  text-decoration: underline;
+}
+
+.btnContainer a {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  height: 42px;
+  line-height: 42px;
+  text-decoration: none;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #ee7700;
+}
+
+.btnContainer a:hover {
+  border: 1px solid #dd5807;
+}
+
+a.loginBtn {
+  background: #ee7700;
+  color: #fff;
+  float: right;
+}
+
+a.loginBtn:hover {
+  background: #dd5807;
+}
+
+a.registerBtn {
+  background-color:#fff;
+  color: #ee7700;
+  float: left;
+}
+
+a.registerBtn:hover {
+  color: #dd5807;
+}
+
+
+.clear {
+  display:none;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: 6px 0 0 -20px;
+  background: url(../../assets/icons/clear.png);
+  top: 13px;
+  right: 15px;
+}
+
+.loginInput::-ms-clear { display: none; }
+.loginInput:valid + .clear { display: inline; }
