@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="assets/style.css" />
+	</head>
+	<body ng-app="myapp" ng-controller="myctrl">
+		<div class="detail-box mgb20">
+			<div class="poly-content">
+				<!--select-->
+				<div class="flex-box mgb10 mgt15">
+					<label for="" class="filed-sublabel" style="margin-top: 7px;">员工：</label>
+					<div class="flex-centent">
+						<div poly-select option-data = "checkboxList" selected-data="selectResult" 
+							option-id="id" option-text="name" 
+							place-holder = "--请选择人员--"
+							default-option="true" 
+							selected-callback="output(selected)"></div>
+					</div>
+				</div>
+				<!--radio check-->
+				<div class="">
+					<div class="icon">首层有无老人房：</div>
+					<div class="icon" radio-check radio-datas="radioDatas" radio-result="selectedRadio"></div>
+					<button type="button" class="poly-btn-blue poly-btn" ng-click="output(selectedRadio)">打印radio</button>
+				</div>
+				
+				<!--checkbox-->
+				<div class="condition-field flex-box">
+					<div class="filed-label" ><b>人员</b></div>
+					<div query-checkbox class="flex-content clearfix checkbox-container" 
+						check-datas="checkboxList" 
+						check-prop="name" 
+						check-results="checkResults"
+						has-input="false"
+						has-checkbox="true"></div>
+						<button type="button" class="poly-btn-blue poly-btn" ng-click="output(checkResults)">打印选中</button>
+				</div>
+				
+				<!--分页-->
+				<div class="mgb10 mgt15">
+					<poly-pagination page-info="pageInfo" page-callback="pageCallback()"></poly-pagination>
+				</div>
+				
+				<!--竖向滚动-->
+				<div style="height: 300px; width: 200px;margin-bottom: 30px;border: 1px solid blue; position: relative; overflow: hidden;" mouse-scroll dir="updown" step="300">
+					<div class="projects-content" style="background: linear-gradient(to top, red, white); height: 2000px;"></div>
+					<div style="position: absolute;  top: 0; width:100%; padding:30px;">鼠标放上去竖向滚动</div>
+				</div>
+				<!--横向滚动-->
+				<div style="height: 100px; width: 400px;margin-bottom: 30px;border: 1px solid blue; position: relative; overflow: hidden;" mouse-scroll dir="leftright" step="300">
+					<div class="projects-content" style="background: linear-gradient(to right, red, white); height: 100%; width: 1000px;"></div>
+					<div style="position: absolute;  top: 0; width:100%; padding:30px;">鼠标放上去横向滚动</div>
+				</div>
+				
+				<!--图片滚动-->
+				<div class="section-item">
+					<div class="section-title">各层平面图</div>
+					<div class="clearfix section-grid" id="everyFloorPlan" img-scroll>
+						<button disabled="true" class="icon-carousel icon-left">&lt;</button>
+						<button class="icon-carousel icon-right">&gt</button>
+						<div class="img-container" mouse-scroll dir="leftright" step="1096">
+							<ul class="clearfix projects-content">
+								<li class="detail-img-grid" ng-repeat="img in imgArr">
+									<div class="detail-img-box">
+										<img src="http://pic29.nipic.com/20130514/12477194_083818249176_2.jpg" alt="" />
+										<div class="detail-img-banner">名称{{img}}</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="query-tab mgb20">
+			<div class="poly-content clearfix">
+			<!--tab-->
+				<ul class="clearfix" tab-active current-tab="currentTab">
+					<li>高层/洋房</li>
+					<li>别墅</a></li>
+				</ul>
+				<div style="color: red; font-size: 18px; padding: 20px;">{{currentTab}}</div>
+			</div>
+		</div>
+		
+		
+		<!--滚动定位-->
+		<section class="clearfix detail-box">
+			<div class="poly-content" detail-scroll>
+				<ul class="detail-nav clearfix">
+					<li class="detail-nav-item active">基本信息</li>
+					<li class="detail-nav-item">经济指标</li>
+					<li class="detail-nav-item">下载</li>
+					<li class="detail-nav-item">建议反馈</li>
+				</ul>
+			</div>
+			<div class="poly-content">
+				<div class="detail-content">
+					<div class="section-item">
+						<div class="section-title">基本信息</div>
+						<div class="clearfix">
+							<div class="col-md-3 flex-box mgb20">
+								<span class="text-gray">开盘时间：</span>
+								<span class="text-deepgray flex-content">2018-04-05</span>
+							</div>
+							<div class="col-md-3 flex-box">
+								<span class="text-gray">省份：</span>
+								<span class="text-deepgray">江苏省</span>
+							</div>
+							<div class="col-md-3 flex-box">
+								<span class="text-gray">公司：</span>
+								<span class="text-deepgray flex-content">苏州公司</span>
+							</div>
+							<div class="col-md-3 flex-box">
+								<span class="text-gray">城市：</span>
+								<span class="text-deepgray flex-content">苏州</span>
+							</div>
+						</div>
+					</div>
+					<div class="section-item">
+						<div class="section-title">经济指标</div>
+						<div class="">
+							<table class="poly-table detail-table" cellpadding="0" cellspacing="0">
+								<colgroup>
+									<col width="14%"/>
+									<col width="20%"/>
+									<col width="16%"/>
+									<col width="20%"/>
+									<col width="14%"/>
+									<col width="16%"/>
+								</colgroup>
+								<tr>
+									<td><b>总用地面积</b></td>
+									<td>50万m²</td>
+									<td><b>净用地面积</b></td>
+									<td>50万m</td>
+									<td><b>配套建筑面积</b></td>
+									<td>50万m</td>
+								</tr>
+								<tr>
+									<td>
+										<div><b>总建筑面积</b></div>
+										<div><b>50万m²</b></div>
+									</td>
+									<td style="padding: 0;">
+										<div class="part-list clearfix">
+											<span class="pull-left">地下</span>
+											<span class="pull-right">50万m²</span>
+										</div>
+										<div class="part-list clearfix">
+											<span  class="pull-left">地上</span>
+											<span class="pull-right">50万m²</span>
+										</div>
+									</td>
+									<td>
+										<div><b>住宅面积</b></div>
+										<div><b>{{detail.houseTotalArea | addUnit:'万m²'}}</b></div>
+									</td>
+									<td style="padding:0;">
+										<div class="part-list clearfix">
+											<span class="pull-left">高层/洋房</span>
+											<span class="pull-right">50万m²</span>
+										</div>
+										<div class="part-list clearfix">
+											<span class="pull-left">别墅</span>
+											<span class="pull-right">50万m²</span>
+										</div>
+									</td>
+									<td><b>车位</b></td>
+									<td style="padding: 0;">
+										<div class="part-list clearfix">
+											<span class="pull-left">地下</span>
+											<span class="pull-right">50万m²</span>
+										</div>
+										<div class="part-list clearfix">
+											<span class="pull-left">地上</span>
+											<span class="pull-right">50万m²</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><b>计容建筑面积</b></td>
+									<td>50万m²</td>
+									<td><b>建筑基底面积</b></td>
+									<td>50万m²</td>
+									<td><b>园林绿化面积</b></td>
+									<td>50万m²</td>
+								</tr>
+								<tr>
+									<td><b>容积率</b></td>
+									<td>50万m²</td>
+									<td><b>建筑密度</b></td>
+									<td>50万m²</td>
+									<td><b>园林绿化率</b></td>
+									<td>50万m²</td>
+								</tr>
+								<tr>
+									<td><b>建筑限高</b></td>
+									<td>50万m²</td>
+									<td><b>建筑限低</b></td>
+									<td>50万m²</td>
+									<td><b>产品类型</b></td>
+									<td>50万m²</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="section-item">
+						<div class="section-title">下载</div>
+						<div class="">
+							<ul class="text-deepgray">
+								<li class="download-item ellipsis">文件一</li>
+								<li class="download-item ellipsis">文件一</li>
+								<li class="download-item ellipsis">文件一</li>
+								<li class="download-item ellipsis">文件一</li>
+							</ul>
+						</div>
+					</div>
+					<div class="section-item">
+						<div class="section-title">建议反馈</div>
+						<div class="mgb20 clearfix">
+							<textarea class="feedback-textarea mgb20" placeholder="请输入您的建议" ng-model="comment" maxlength="200"></textarea>
+							<button type="button" class="poly-btn1 poly-btn-blue poly-btn-md pull-right">提交</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<script src="../angular1/jquery-1.10.1.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			var myapp = angular.module("myapp",[]);
+			myapp.controller("myctrl",["$scope", function($scope){
+//				checkbox,select
+				$scope.checkboxList = [
+					{id: '1', name: 'tzz'},
+					{id: '2', name: 'sys'},
+					{id: '3', name: 'hpp'},
+					{id: '4', name: 'cpp'},
+					{id: '5', name: 'yl'},
+				];
+				$scope.checkResults = [];
+				$scope.selectResult = null;
+				$scope.currentTab = "";
+				
+				//radio check
+				$scope.radioDatas = [{value: 1, text: '是'},{value: 2, text:'否'}];
+				$scope.selectedRadio = "";
+				
+				$scope.output = function (item){
+					console.log(item);
+				}
+				
+				/*分页*/
+				$scope.pageInfo = {currentPage: 1, pageSize: 5, totalPage: 80};
+				
+				/*图片滚动*/
+				$scope.imgArr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+				$scope.pageCallback = function(){
+						$scope.$broadcast('changePage');	
+				};
+			}]);
+		</script>
+		<script src="directives.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

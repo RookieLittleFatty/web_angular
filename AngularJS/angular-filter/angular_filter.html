@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-app="myapp" ng-controller="myCtrl">
+		<div>{{ childrenArray | joinProvince}}</div>
+		<script src="../angular1/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			angular.module("myapp",[])
+			.filter('joinProvince',function(){
+				return function(data){
+					console.log(data);
+					var string = '';
+					data.forEach(function(item){
+						string+=item.name+',';
+					})
+					return string;
+				}
+			})
+			.controller("myCtrl", ['$scope', function($scope){
+				$scope.childrenArray = [
+			        {name:'kimi',age:3},
+			        {name:'cindy',age:4},
+			        {name:'anglar',age:4},
+			        {name:'shitou',age:6},
+			        {name:'tiantian',age:5}
+			    ];
+			}]);	
+		</script>
+	</body>
+</html>

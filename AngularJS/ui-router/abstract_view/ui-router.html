@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style>
+		.swiper-container {
+		    width: 600px;
+		    height: 300px;
+		}  
+		</style>
+	</head>
+	<body ng-app="demo" ng-controller="myctrl">
+		<div ui-view=""></div>
+		<div ui-view="root-other"></div>
+		<script src="../../angular1/angular.js"></script>
+		<script src="../../angular1/angular-ui-router.js"></script>
+		<script>
+			angular.module("demo",["ui.router"])
+			.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+			      $stateProvider
+			      	.state("app", {
+			      		url: '/app',
+		          		templateUrl: 'header.html',
+		          		controller: 'headerCtrl'
+			      	})
+			        .state('home', {
+			          url: '/home',
+			          parent: 'app',
+			          views: {
+			          	"top":{
+			          		templateUrl: 'top.html'
+			          	},
+			          	"bottom": {
+			          		templateUrl: 'bottom.html'
+			          	},
+			          	"root-other@": {
+			          		templateUrl: 'content2.html',
+			          	}
+			          }
+			      	})
+			        .state('content1',{
+			        	url:'/content1',
+			        	parent: "home",
+			        	views: {
+			        		"top@app": {
+			        			templateUrl: 'content1.html'
+			        		},
+			        		"root-other@": {
+			        			templateUrl: 'content3.html'
+			        		}
+			        	}
+			        });
+			        $urlRouterProvider.otherwise('/app');
+			}).controller("myctrl",['$scope', '$state', function($scope, $state){
+				
+			}]).controller("headerCtrl",['$scope', '$state', function($scope, $state){
+				$scope.change = function(state){
+					$state.go(state);
+				}
+			}]);
+		</script>
+	</body>
+</html>

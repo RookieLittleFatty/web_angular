@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css"/>
+		<style>
+		.swiper-container {
+		    width: 600px;
+		    height: 300px;
+		}  
+		</style>
+	</head>
+	<body ng-app="demo" ng-controller="myctrl">
+		<a ng-click="change()">{{a}}</a>
+		<div ng-view></div>
+		<div class="swiper-container">
+		    <!-- Additional required wrapper -->
+		    <div class="swiper-wrapper">
+		        <!-- Slides -->
+		        <div class="swiper-slide" style="background:red;">
+		        	<ul>
+		        		<li ng-repeat="x in list1" repeat-finished="changeContent()">{{x}}</li>
+		        	</ul>
+		        </div>
+		        <div class="swiper-slide" style="background:orange;">
+		        	<ul>
+		        		<li ng-repeat="y in list2" repeat-finished="changeContent()">{{y}}</li>
+		        	</ul>
+		        </div>
+		        <div class="swiper-slide" style="background:greenyellow;">
+		        	<ul>
+		        		<li ng-repeat="z in list3" repeat-finished="changeContent()">{{z}}</li>
+		        	</ul>
+		        </div>
+		    </div>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script src="swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			document.body.onbeforeunload = HandleBackFunctionality;
+				function HandleBackFunctionality()
+				{
+				       
+						     alert("Browser refresh button is clicked...");
+				}
+			angular.module("demo",[])
+			.directive("repeatFinished", function(){
+				return {
+					restrict: "A",
+					link: function(scope){
+						if(scope.$last){
+							console.log("finished");
+						}
+					}
+				}
+			})
+			.controller("myctrl",["$scope","$timeout", function($scope, $timeout){
+				$scope.a = "tzz";
+				$scope.reload = function(){
+					$route.reload();
+				};
+				$scope.list1 = [1.1,1.2,1.3,1.4];
+				$scope.list2 = [2.1,2.2,2.3,2.4];
+				$scope.list3 = [3.1,3.2,3.3,3.4];
+				var myswiper = new Swiper('.swiper-container',{});
+				$scope.change = function(){
+					$scope.list1 = [1.1,1.2,1.3,1.4, 1.5, 1.6];
+					$scope.list2 = [2.1,2.2,2.3,2.4,2.5,2.6];
+					$scope.list3 = [3.1,3.2,3.3,3.4, 3.5, 3.6];
+				};
+			}]);
+		</script>
+	</body>
+</html>

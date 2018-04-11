@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style>
+		.swiper-container {
+		    width: 600px;
+		    height: 300px;
+		}  
+		</style>
+		<!--<base href="/">-->
+	</head>
+	<body ng-app="demo" ng-controller="myctrl">
+		<div>{{test}}</div>
+		<div test-ele data="tzz" prop="name"></div>
+		<div ui-view></div>
+		<script src="../../angular1/angular.js"></script>
+		<script src="../..//angular1/angular-ui-router.js"></script>
+		<!--<script src="demos/swiper/demo/angular.js"></script>
+		<script src="demos/swiper/demo/angular-ui-router.js"></script>-->
+		<script>
+			angular.module("demo",["ui.router"]).
+			config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+			      $stateProvider
+			        .state('router1', {
+			          url: '/router1',
+//			          templateUrl: 'demos/swiper/demo/router1.html'
+			          templateUrl: 'router1.html'
+			      	})
+			        .state('router2', {
+			          url: '/router2',
+//			          templateUrl: 'demos/swiper/demo/router2.html'
+			          templateUrl: 'router2.html'
+			      	});
+			      	$urlRouterProvider.otherwise('router1');
+//			      	$locationProvider.html5Mode(true);
+			})
+			.directive("testEle",function(){
+				return {
+					restrict: "A",
+//					template: '<div ng-repeat="x in data">{{x.name}}</div>'
+					template: function(ele,attrs){
+						return '<a>{{'+ attrs.data + '.' + attrs.prop + '}}</a>';
+					},
+					scope: false,
+					controller: function($scope, $element, $attrs, $transclude){
+						$scope.test = "bind child scope test";
+						$scope.directiveScope = "directiv";
+						console.log($scope.test, $element);
+					},
+					link: function(scope, ele){
+						ele.on("click", function(){
+							debugger;
+							scope.tzz = {name:'sm',age:'26'};
+							console.log(scope);
+						});
+						console.log("link");
+						
+					}
+				};
+			}).controller("myctrl",['$scope', '$state', function($scope, $state){
+				$scope.click = function(){
+					$state.go('router2');
+				};
+				$scope.test = "parent scope test";
+				$scope.tzz = {
+					name: 'tzz',
+					age: '27'
+				};
+			}]);
+		</script>
+	</body>
+</html>

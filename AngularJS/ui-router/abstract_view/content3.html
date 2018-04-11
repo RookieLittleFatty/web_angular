@@ -1,0 +1,9 @@
+<div style="background: green; color: #black;">
+	<h4>原型是：viewName + '@' + stateName，解释下：</h4>
+		<ul>
+			<li>viewName: 指的是ui-view="status"中的'status', 也可以是''(空字符串)，因为会有匿名的ui-view或者ui-view="" </li>
+			<li>stateName-默认情况下是父路由的state.name，因为子路由模板一般都安插在父路由的ui-view中,也可以是''(空字符串)，表示最顶层rootState, 还可以是任意的祖先state.name</li>
+		</ul>
+		
+	<h5>不是很明白，目前实践发现的作用就是在子路由中定义上层视图的模板</h5>
+</div>

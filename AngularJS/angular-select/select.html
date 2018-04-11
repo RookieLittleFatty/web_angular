@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body ng-app="myapp" ng-controller="myctrl">
+		<div>ng-option "track by"用法</div>
+		<div>
+			<select ng-model="selectedTest" ng-options="test.name for test in tests track by test.id" ng-change="testsChange()"></select>
+		</div>
+		<hr>
+		<div>ng-option "as"用法,添加默认请选择，value值必须为空</div>
+		<div>
+			<div>
+				<select ng-model="selectedTest2" ng-options="test2.id as test2.name for test2 in tests2" ng-change="tests2Change()">
+					<option value="">--请选择--</option>
+				</select>
+			</div>
+		</div>
+		<hr>
+		<div>checkbox</div>
+		<div>
+			<label ng-repeat="x in provinces"><input type="checkbox" ng-model="x.isChecked" ng-click="logCheck(x)">{{x.name}}</label>
+		</form>
+		<div ng-click="getSelected()">获取</div>
+		<div>{{checkSelectedArr}}</div>
+		
+		
+		<script src="../angular1/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script type="text/javascript">
+			angular.module("myapp",[])
+				.controller("myctrl",["$scope","$filter" ,function($scope, $filter){
+					/*ng-option track by*/
+					$scope.selectedTest={id: '7'};
+					$scope.tests = [{id:'6',value:'test1',name:"cpp"},{id:'7',value:'test2',name:'tzz'},{id:'8',value:'test3',name:'zhw'}];
+					$scope.testsChange = function(){
+						console.log($scope.selectedTest);//监测选中后的值是对象还是数值？
+					};
+					
+					/*ng-option as*/
+					$scope.selectedTest2 = '3';
+					$scope.tests2 = [{id:'4',value:'test1',name:"cpp"},{id:'3',value:'test2',name:'tzz'},{id:'5',value:'test3',name:'zhw'}];
+					$scope.tests2Change = function(){
+						console.log($scope.selectedTest2); //监测选中后的值是对象还是数值？
+					}
+					/*checkbox ng-model 绑定状态为true或false*/
+					$scope.provinces = [{
+						areaId: "001",
+						name: '江苏省',
+						isChecked: false,
+					},
+					{
+						areaId: "002",
+						name: '浙江省',
+						isChecked: true
+					},{
+						areaId: "003",
+						name: '安徽省',
+						isChecked : false
+					}
+					];
+					$scope.checkSelectedArr = [$scope.provinces[1]];
+					$scope.logCheck = function(x){
+						console.log(x.isChecked);
+						if(x.isChecked){
+							$scope.checkSelectedArr.push(x);
+						}
+					};
+				}]);
+		</script>
+	</body>
+</html>
