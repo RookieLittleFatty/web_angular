@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function checkInputIntFloat(oInput){
+				 if('' != oInput.value.replace(/\d{1,}\.{0,1}\d{0,3}/,'')) { 
+        			oInput.value = oInput.value.match(/\d{1,}\.{0,1}\d{0,3}/) == null ? '' :oInput.value.match(/\d{1,}\.{0,1}\d{0,3}/); 
+        		}
+			}
+		</script>
+		<div>小数限制， onblur是中文输入法限制get不到keyup事件时</div>
+		<input type="text" onkeyup="checkInputIntFloat(this)" onblur="checkInputIntFloat(this)"/>
+		<hr />
+		<div>整数限制</div>
+		<input onkeyup="this.value=this.value.replace(/\D/g,'')"/>  
+	</body>
+</html>
