@@ -1,0 +1,65 @@
+<div class="current-location">
+  <span>文档中心</span> &gt; <span>现行制度</span>
+</div>
+<div class="hidden-box">
+  <div class="f-l">
+    <input type="text" name="searchName"  class="search-input" placeholder="请输入查询条件">
+  </div>
+  <div class="f-l ml20">
+    <button type="button" class="zjy-btn zjy-btn-oranger">查询</button>
+  </div>
+  <div class="f-r">
+    <button type="button" class="zjy-btn zjy-btn-oranger" (click)="addModule.show()">新增模块</button>
+  </div>
+</div>
+<div>
+  <div class="baseinfo-card hidden-box mt20" *ngFor="let module of moduleList;">
+    <div class="task-top p-relative">
+      <span class="module-name">{{module.moduleName}}</span>
+      <a href="javascript:void(0);" class="a-more" (click)="showMore(module.id)">更多</a>
+    </div>
+    <div class="pd20">
+      <div>
+        <span class="article-gg w-280">管理办法公告</span>
+        <span class="article-gg w-565">深圳分公司</span>
+        <span class="article-gg ta-r">2018-04-02</span>
+      </div>
+      <div>
+        <span class="article-gg w-280">管理办法公告</span>
+        <span class="article-gg w-565">深圳分公司</span>
+        <span class="article-gg ta-r">2018-04-02</span>
+      </div>
+      <div>
+        <span class="article-gg w-280">管理办法公告</span>
+        <span class="article-gg w-565">深圳分公司</span>
+        <span class="article-gg">2018-04-02</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--新增模块弹框-->
+<div class="modal jzy-modal fade" bsModal #addModule="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">新增模块</h4>
+      </div>
+      <div class="modal-body">
+        <div class="mt20">
+          <div><label>模块名称：</label></div>
+          <div class="mt10">
+            <input type="text" name="moduleNameInput" class="width-100" [(ngModel)]="moduleName">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="text-center mt20">
+          <button type="button" class="zjy-btn zjy-btn-oranger" (click)="addNew()" [disabled]="!moduleName">确认</button>
+          <button type="button" class="zjy-btn ml20" (click)="addModule.hide()">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

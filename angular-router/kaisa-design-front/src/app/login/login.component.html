@@ -1,0 +1,102 @@
+<div class="container_bg"></div>
+<div class="container">
+  <div class="login_logo">
+    <img src="../../assets/images/login-logo.png" width="186px">
+  </div>
+  <ul class="loginInput">
+    <li class="inputContainer" [ngClass]="{'focus': focusIndex === 1}">
+      <input type="text" name="userName" id="userName" class="loginInput" required (focus)="focusIndex = 1"><a class="clear"></a>
+      <label for="userName">账号</label>
+    </li>
+    <li class="inputContainer" [ngClass]="{'focus': focusIndex === 2}">
+      <input type="password" name="password" id="password" class="loginInput" required (focus)="focusIndex = 2"><a class="clear"></a>
+      <label for="password">密码</label>
+    </li>
+    <li class="forgetPassword">
+      <input type="checkbox" id="remember" [(ngModel)]="isRemeber">
+      <label for="remember" [ngClass]="{'checked': isRemeber}">记住登录</label>
+      <a href="#">忘记密码？</a>
+    </li>
+    <li class="btnContainer">
+      <a href="javascript:;"  class="registerBtn" (click)="registerModal.show()">注  册</a>
+      <a href="javascript:;" routerLink="/designPlatform/home" class="loginBtn">登  录</a>
+    </li>
+  </ul>
+</div>
+<div class="modal jzy-modal fade" bsModal #registerModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">设计院注册</h4>
+      </div>
+      <div class="modal-body">
+        <div class="topInputContainer">
+          <div class="topInputItem">
+            <label class="topInputItemTitle">城市</label>
+            <input type="text" name="city">
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">项目</label>
+            <div class="select-parent">
+              <select>
+                <option>基建</option>
+                <option>结构</option>
+                <option>幕墙</option>
+                <option>室内装饰设计</option>
+              </select>
+            </div>
+            <!-- <input type="text" name="project"> -->
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">姓名</label>
+            <input type="text" name="name">
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">手机号</label>
+            <input type="text" name="phone">
+          </div>
+        </div>
+        <div class="tableContainer">
+          <div class="tableTitle">项目团队成员名单</div>
+          <div class="addBtnContainer">
+            <a href="javascript: void(0);" (click)="addRegisterMember()">添加组员</a>
+          </div>
+          <table class="menberListTable" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>专业</th>
+              <th>姓名</th>
+              <th>手机</th>
+              <th>邮箱</th>
+              <th>操作</th>
+            </tr>
+            <tr *ngFor="let member of registerMemberList; let i =index;">
+              <td>
+                <div class="select-parent usable">
+                  <select name="major_{{i}}" [(ngModel)]="member.major" [compareWith]="compareFun" [disabled]="member.status === 'unEdit'">
+                    <option [ngValue]="majorItem" *ngFor="let majorItem of majors">{{majorItem.major}}</option>
+                  </select>
+                </div>
+              </td>
+              <td><input type="text" name="name_{{i}}" [(ngModel)]="member.name" [disabled]="member.status === 'unEdit'"></td>
+              <td><input type="text" name="phone_{{i}}" [(ngModel)]="member.cellphone" [disabled]="member.status === 'unEdit'"></td>
+              <td><input type="text" name="email_{{i}}" [(ngModel)]="member.email" [disabled]="member.status === 'unEdit'"></td>
+              <td>
+                <a href="javascript:;" class="edit" *ngIf="member.status === 'unEdit'" (click)="editMember(i, member)">编辑</a>
+                <a href="javascript:;" class="save" *ngIf="member.status === 'edit'" (click)="saveMember(member)">保存</a>
+                <a href="javascript:;" class="delete" (click)="deleteMember(i)">删除</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="sumitContiner">
+          <a href="javascript: void(0);" class="sumitBtn" (click)="sureRegister()">提交</a>
+          <a href="javascript: void(0);" class="cancelBtn" (click)="registerModal.hide()">取消</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,27 @@
+<!-- nav -->
+<div  class="nav-container">
+  <div class="nav clearfix">
+    <div class="f-l clearfix">
+      <div class="logo">
+        <img src="../../../assets/images/logo.png" alt="">
+      </div>
+      <div class="nav-desc ">设计管理平台</div>
+      <div class="nav-item">
+        <a href="javascript:void(0);" routerLink="/designPlatform/home" routerLinkActive="active">首页</a>
+        <a href="javascript:void(0);" routerLink="/designPlatform/project" routerLinkActive="active">项目</a>
+        <a href="javascript:void(0);" routerLink="/designPlatform/repository" routerLinkActive="active">知识库</a>
+        <a href="javascript:void(0);" routerLink="/designPlatform/reportCenter" routerLinkActive="active">报表中心</a>
+      </div>
+    </div>
+    <div class="f-r pd-15 clearfix">
+      <div class="nav-tx">
+        <img src="../../../assets/images/tx.png" alt="">
+      </div>
+      <span class="nav-like" (click)="test()">欢迎你，Alex</span>
+      <span class="nav-exit" routerLink="/login">
+	  		    <i class="nav-exit-icon"></i>
+                退出
+	  		</span>
+    </div>
+  </div>
+</div>

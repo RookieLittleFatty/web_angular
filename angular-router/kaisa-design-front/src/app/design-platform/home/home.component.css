@@ -1,0 +1,209 @@
+.w-820{
+  width: 820px;
+  margin-right: 20px;
+}
+.task,.project,.meet{
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+}
+.task-top{
+  position: relative;
+  padding-left: 33px;
+  height: 51px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #ffffff;
+  background: linear-gradient(45deg, #f4f6fa 0%, #fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f6fa', endColorstr='#fff', GradientType=1);
+  line-height: 50px;
+  font-size: 16px;
+}
+.squre{
+  position: absolute;
+  left:20px;
+  top:22px;
+  width: 6px;
+  height: 6px;
+  background-color:#e70;
+}
+.task-content{
+  padding:0 20px;
+  background-color: #fff;
+}
+.task-link{
+  padding:15px 0 21px 0;
+}
+.task-link a{
+  float: left;
+  margin-right: 12px;
+  display: inline-block;
+  width: 100px;
+  height: 34px;
+  line-height: 32px;
+  border:1px solid #ced0da;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #fefefe;
+  font-size: 14px;
+  color: #363c47;
+}
+.task-link a.active{
+  background-color: #e70;
+  border:1px solid #e70;
+  color: #fff;
+}
+.mt-20{
+  margin-top: 20px;
+}
+.task-ul li{
+  height: 41px;
+  line-height: 40px;
+  border-bottom: 1px dashed #e8e8e8;
+  font-size: 14px;
+  color: #363c47;
+  cursor: pointer;
+}
+/*.task-ul li:hover{*/
+  /*background: #f4f6fa;*/
+/*}*/
+.task-date{
+  display: inline-block;
+  /*width:80px;*/
+  padding-right:7px;
+  color:#9b9b9b;
+  font-size:13px;
+}
+.project{
+  float: left;
+  width: 400px;
+}
+.mr-20{
+  margin-right: 20px;
+}
+.bg-linear{
+  background: linear-gradient(45deg, #fff 0%, #fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fff', GradientType=1);
+}
+.echart-bg{
+  background-color: #fff;
+  width: 371px;
+  height: 220px;
+  line-height: 0;
+  margin:0 auto;
+}
+.echart-bg img{
+  width: 100%;
+  height: 100%;
+}
+.pd-7{
+  padding: 7px 0;
+}
+.w-423{
+  width: 423px;
+}
+.meet-link{
+  height: 39px;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #fbfbfb;
+}
+.meet-link {
+  padding-left: 15px;
+}
+.meet-link a{
+  padding: 0 25px;
+  line-height: 38px;
+  color: #9b9b9b;
+  font-size: 15px;
+  font-weight: bold;
+}
+.meet-link a.active{
+  color: #e70;
+}
+.meet-list{
+  height: 289px;
+  overflow: auto;
+}
+.pb-30{
+  padding-bottom: 30px;
+}
+.meet-ul{
+  padding: 26px 40px 0 42px;
+  font-size: 14px;
+  line-height: 1;
+  color: #363c47;
+}
+.meet-ul li{
+  position: relative;
+  border-left: 2px solid #e8e8e8;
+  padding-bottom: 26px;
+}
+.circle{
+  position: absolute;
+  width:10px;
+  height: 10px;
+  background-color: #289df4;
+  border-radius: 100%;
+  top:0px;
+  left: -5px;
+}
+.meet-date{
+  float: left;
+  font-weight: bold;
+  color: #e70;
+  width: 116px;
+  padding-left:14px;
+}
+.meet-address{
+  margin-bottom: 13px;
+}
+.icon-address{
+  display: inline-block;
+  width: 12px;
+  height: 16px;
+  margin-right: 4px;
+  background: url('../../../assets/icons/address.png') no-repeat center;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  vertical-align: bottom;
+}
+.meet-room{
+  font-size: 13px;
+  color: #9b9b9b;
+}
+.w-200{
+  width: 200px;
+}
+.hot-box{
+  position: relative;
+}
+.hot-dot {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #ee7700;
+  cursor: pointer;
+  font-weight: bold;
+}
+.absolute-label{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 7px;
+}
+.absolute-label+div{
+  margin-left: 110px;
+}
+.modal-section{
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 0;
+  margin: 10px 0;
+  color: #ee7700;
+}
+td input.readonly{
+  background: transparent;
+  border: none;
+  text-align: center;
+}
