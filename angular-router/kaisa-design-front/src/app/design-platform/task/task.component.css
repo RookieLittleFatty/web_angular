@@ -1,0 +1,105 @@
+.listTitle{
+  height:40px;
+  background-color:#fff;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom:1px solid #e8e8e8;
+}
+
+.listTitle span.tip{
+  display: block;
+  background-color: #ed7701;
+  height: 18px;
+  width: 5px;
+  margin-left: 15px;
+  margin-top: 10px;
+  float: left;
+}
+
+.listTitle span.text{
+  display: block;
+  margin-left: 10px;
+  color: #353d47;
+  line-height: 17px;
+  font-size:16px;
+  font-weight: bold;
+  float: left;
+  margin-top: 10px;
+}
+.reportTable{
+  padding: 30px;
+}
+.statusGreen {
+  color:#8ec220;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.statusOrange {
+  color:#fdac1f;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.statusGery {
+  color:#d2d2d2;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+table.reportListTable tbody{
+  cursor: pointer;
+}
+table.reportListTable tr:hover td {
+  background: #f5f5f5;
+}
+.modal-section{
+  font-weight: bold;
+  font-size: 14px;
+  margin: 10px 0;
+  color: #ee7700;
+  padding-left: 20px;
+}
+.file-form{
+  padding: 20px;
+  line-height: 40px;
+}
+.group{
+  margin-top: 15px;
+}
+.group label{
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+
+}
+.group input[type="text"]{
+    width: 360px;
+    height: 44px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 14px;
+    /* color: #999; */
+    padding-left: 15px;
+    line-height: 42px;
+}
+.a-btn-file{
+ margin-left: 110px;
+}
+.a-btn-file a{
+  display: inline-block;
+   color:#444;
+   width: 120px;
+   line-height: 34px;
+   height: 36px;
+   padding: 0;
+   text-align: center;
+}
+.a-btn-file a.zjy-btn-oranger{
+  color: #fff;
+}
+
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
+
+html, body { height: 100%; }

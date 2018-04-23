@@ -1,0 +1,26 @@
+<div class="w-1263 detail-box baseinfo-card">
+  <div class="listTitle"><span class="tip"></span><span class="text">创建任务</span></div>
+  <div>
+    <div class="modal-section">任务信息</div>
+    <div class="file-form">
+	    <div class="group">
+	    	 <label for="name">任务描述:</label>
+	    	 <input type="text" id="name" [(ngModel)]="taskEntity.description">
+	    </div>
+	    <div class="group">
+	    	 <label for="time">完成时间:</label>
+	    	 <input class="search-input" type="text" id="time" bsDatepicker [minDate]="minDate"  [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD HH:mm:ss', containerClass: 'theme-orange'}" [(ngModel)]="taskEntity.completeTime">
+	    </div>
+	    <div class="group clearfix">
+	    	 <label class="f-l">上传文件:</label>
+         <div id="uploader" class="f-l w-820">
+          <button (click)="doUpload()" style="height: 40px;width: 100px;">上传文件</button>
+         </div>
+	    </div>
+	     <div class="group a-btn-file text-center">
+	    	 <a href="javascript:void(0);" class="zjy-btn zjy-btn-oranger" (click)="doSave()">发起</a>
+	    	 <a href="javascript:void(0);" class="zjy-btn ml20" (click)="doCancel()">取消</a>
+	    </div>
+    </div>
+  </div>
+</div>

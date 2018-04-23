@@ -1,0 +1,22 @@
+.card-title{
+  padding: 9px 15px 9px 27px;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+  margin-bottom: 20px;
+}
+.card-title:before{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 4px;
+  height: 14px;
+  background: #ee7700;
+  left: 14px;
+  top: 50%;
+  margin-top: -7px;
+}
+.tab-card{
+  margin-top: 20px;
+}

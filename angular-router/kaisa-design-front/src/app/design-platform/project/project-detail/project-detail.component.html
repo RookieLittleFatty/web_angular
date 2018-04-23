@@ -1,0 +1,60 @@
+<div class="w-1263 detail-box clearfix">
+  <app-left-side class="f-l"></app-left-side>
+  <div class="project-right">
+    <div class="current-location">当前位置 : 项目</div>
+    <div class="baseinfo-card">
+      <div class="card-title">项目基本信息</div>
+      <div>
+        <div class="info-group">
+          <div class="third-percent">
+            <span class="info-label">项目编号 ：</span>
+            <span class="info-text">深圳-DZ001</span>
+          </div>
+          <div class="third-percent">
+            <span class="info-label">项目名称 ：</span>
+            <span class="info-text">深圳-DZ001地块项目</span>
+          </div>
+          <div class="third-percent">
+            <span class="info-label">项目地址 ：</span>
+            <span class="info-text">广东-深圳</span>
+          </div>
+        </div>
+        <div class="info-group">
+          <div class="third-percent">
+            <span class="info-label">创建时间 ：</span>
+            <span class="info-text">2018-06-28</span>
+          </div>
+          <div class="third-percent">
+            <span class="info-label">项目负责人 ：</span>
+            <span class="info-text">徐伟</span>
+          </div>
+          <div class="third-percent">
+            <span class="info-label">预计完成时间 ：</span>
+            <span class="info-text">2019-06-28</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-card">
+      <ul class="tab-list">
+        <li class="tab-item" [ngClass]="{'active': tabIndex === 1}" (click)="changeTab(1)">项目信息</li>
+        <li class="tab-item" [ngClass]="{'active': tabIndex === 2}" (click)="changeTab(2)">项目文件</li>
+        <li class="tab-item" [ngClass]="{'active': tabIndex === 3}" (click)="changeTab(3)">审核</li>
+        <li class="tab-item" [ngClass]="{'active': tabIndex === 4}" (click)="changeTab(4)">巡检</li>
+        <li class="tab-item" [ngClass]="{'active': tabIndex === 5}" (click)="changeTab(5)">会议</li>
+        <li class="tab-item" [ngClass]="{'active': tabIndex === 6}" (click)="changeTab(6)">数据分析</li>
+      </ul>
+      <app-project-info *ngIf="tabIndex === 1"></app-project-info>
+      <app-project-file *ngIf="tabIndex === 2"></app-project-file>
+      <div class="tab-content" *ngIf="tabIndex === 3">
+        <div class="search-group"><h2>暂无</h2></div>
+      </div>
+      <app-meeting *ngIf="tabIndex === 5"></app-meeting>
+      <app-itinerant-detective *ngIf="tabIndex === 4"></app-itinerant-detective>
+      <app-data-analysis *ngIf="tabIndex === 6"></app-data-analysis>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,75 @@
+.content-tab{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  color: #36383c;
+  position: fixed;
+  top: 44px;
+  left: 0;
+  right:0;
+  width: 100%;
+  z-index: 1000;
+  -webkit-box-shadow:  5px 0 5px rgba(0,0,0,0.1);
+  -moz-box-shadow:  5px 0 5px rgba(0,0,0,0.1);
+  box-shadow:  5px 0 5px rgba(0,0,0,0.1);
+}
+.content-tab-li{
+  list-style: none;
+  width: 50%;
+  float: left;
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+}
+.content-tab-li:first-child div{
+  border-right: 2px solid #eee;
+}
+.content-tab-li.active{
+  border-bottom: 2px solid #ee7700;
+}
+.content-container{
+  padding-top: 40px;
+}
+/*card-list content*/
+.card-sub{
+  position: absolute;
+  right: 10px;
+  font-size: 12px;
+  color: #999;
+}
+.card-time {
+  top: 5px;
+}
+.card-faqi{
+  bottom: 5px;
+}
+.card-caption{
+  margin: 5px 0;
+}
+.card-info{
+  font-size: 12px;
+  color: #999;
+}
+.info-item{
+  float: left;
+  margin-right: 4px;
+}
+.info-icon{
+  width: 13px;
+  height: 12px;
+  float: left;
+  margin-top:3px;
+  margin-right: 2px;
+}
+.info-icon+span{
+  float: left;
+}
+.star-icon{
+  background: url(../../../../assets/icons/faqii.png) no-repeat center;
+  background-size: auto 100%;
+}
+.vip-icon{
+  background: url(../../../../assets/icons/VIP.png) no-repeat center;
+  background-size: auto 100%;
+}

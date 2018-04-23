@@ -1,0 +1,27 @@
+.modal-section{
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 0;
+  margin: 10px 0;
+  color: #ee7700;
+}
+td input.readonly{
+  background: transparent;
+  border: none;
+  text-align: center;
+}
+.absolute-label{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 7px;
+}
+.absolute-label+div{
+  margin-left: 110px;
+}
+.hot-box{
+  position: relative;
+}

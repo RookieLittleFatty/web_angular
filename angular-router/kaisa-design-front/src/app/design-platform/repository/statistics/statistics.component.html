@@ -1,0 +1,24 @@
+<div class="tab-content">
+  <div class="pd20">
+    <table class="reportListTable" cellspacing="0" cellpadding="0">
+      <thead>
+      <tr>
+        <th>姓名</th>
+        <th>总查看数 <a src="#" class="fa" (click)="changeSortWay('totalView')" [ngClass]="{'fa-sort-amount-asc': sortFlags.totalView, 'fa-sort-amount-desc': !sortFlags.totalView}"></a></th>
+        <th>总下载数 <a src="#" class="fa fa-sort-amount-asc" (click)="changeSortWay('totalDownload')" [ngClass]="{'fa-sort-amount-asc': sortFlags.totalDownload, 'fa-sort-amount-desc': !sortFlags.totalDownload}"></a></th>
+        <th>近一周查看数 <a src="#" class="fa fa-sort-amount-asc" (click)="changeSortWay('recentView')" [ngClass]="{'fa-sort-amount-asc': sortFlags.recentView, 'fa-sort-amount-desc': !sortFlags.recentView}"></a></th>
+        <th>近一周下载数 <a src="#" class="fa fa-sort-amount-asc" (click)="changeSortWay('recentDownload')" [ngClass]="{'fa-sort-amount-asc': sortFlags.recentDownload, 'fa-sort-amount-desc': !sortFlags.recentDownload}"></a></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of testArr">
+        <td>张世博</td>
+        <td>80</td>
+        <td>80</td>
+        <td>23</td>
+        <td>32</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

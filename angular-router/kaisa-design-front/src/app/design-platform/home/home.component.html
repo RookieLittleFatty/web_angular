@@ -1,0 +1,113 @@
+<!-- task -->
+<div class="w-1263 clearfix mb30">
+  <div class="w-820 f-l">
+    <div class="task">
+      <div class="task-top hot-box">
+        <i class="squre"></i>我的任务
+        <div class="hot-dot" (click)="creatTask()">+ 发起任务</div>
+      </div>
+      <div class="task-content">
+        <div class="task-link clearfix">
+          <a href="javascript:void(0);" [ngClass]="{'active': taskType === 3}" (click)="changeType(3)">注册审批</a>
+          <a href="javascript:void(0);" [ngClass]="{'active': taskType === 1}" (click)="changeType(1)">设计评审</a>
+          <a href="javascript:void(0);" [ngClass]="{'active': taskType === 2}" (click)="changeType(2)">设计变更</a>
+        </div>
+        <ul class="task-ul pb-30">
+          <li class="clearfix" *ngFor="let task of taskList">
+            <div class="f-l">{{task.taskName}}</div>
+            <span class="f-r task-date">{{task.createDt | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="clearfix mt-20">
+      <div class="project mr-20">
+        <div class="task-top">
+          <i class="squre"></i>我的项目
+        </div>
+        <div class="task-content">
+          <ul class="task-ul pd-7">
+            <li class="clearfix"  routerLink="/designPlatform/project/detail">
+              广州佳兆（编号：JZY20180312；负责人：李鹏飞）
+            </li>
+            <li class="clearfix">
+              广州编号：JZY20180312；负责人：李鹏飞）
+            </li>
+            <li class="clearfix">
+              广州佳（编号：JZY20180312；负责人：李鹏飞）
+            </li>
+            <li class="clearfix">
+              广州佳编号：JZY20180312；负责人：李鹏飞）
+            </li>
+            <li class="clearfix">
+              广州佳兆（编号：JZY20180312；负责人：李鹏飞）
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="project bg-fff">
+        <div class="task-top bg-linear">
+          <i class="squre"></i>查询问题分类
+        </div>
+        <div class="echart-bg">
+          <img src="../../../assets/images/echart.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-423 f-r gray-border">
+    <div class="hot-box">
+      <p-calendar [(ngModel)]="date11" [inline]="true" [locale]="cn" [styleClass]="'home-calendar'">
+        <!--<ng-template pTemplate="date" let-date>-->
+          <!--&lt;!&ndash;<span [ngStyle]="{backgroundColor: (date.day < 21 && date.day > 10) ? '#7cc67c' : 'inherit'}" style="border-radius:50%">{{date.day}}</span>&ndash;&gt;-->
+        <!--</ng-template>-->
+      </p-calendar>
+      <div class="hot-dot" (click)="showAddMeeting()">+ 创建会议</div>
+    </div>
+    <div class="bg-fff">
+      <div class="meet-link">
+        <a href="javascript:void(0);" class="active">会议（6）</a>
+      </div>
+
+      <div class="meet-list">
+        <ul class="meet-ul">
+          <li class="clearfix">
+            <i class="circle"></i>
+            <div class="meet-date">9:20-10:30</div>
+            <div class="f-r w-200">
+              <p class="meet-address">广州佳兆业壹号项目内部沟通会</p>
+              <span class="meet-room"><i class="icon-address"></i> 五楼三号会议室</span>
+            </div>
+          </li>
+          <li class="clearfix">
+            <i class="circle"></i>
+            <div class="meet-date">9:20-10:30</div>
+            <div class="f-r w-200">
+              <p class="meet-address">广州佳兆业壹号项目内部沟通会</p>
+              <span class="meet-room"><i class="icon-address"></i> 五楼三号会议室</span>
+            </div>
+          </li>
+          <li class="clearfix">
+            <i class="circle"></i>
+            <div class="meet-date">9:20-10:30</div>
+            <div class="f-r w-200">
+              <p class="meet-address">广州佳兆业壹号项目内部沟通会</p>
+              <span class="meet-room"><i class="icon-address"></i> 五楼三号会议室</span>
+            </div>
+          </li>
+          <li class="clearfix">
+            <i class="circle"></i>
+            <div class="meet-date">9:20-10:30</div>
+            <div class="f-r w-200">
+              <p class="meet-address">广州佳兆业壹号项目内部沟通会</p>
+              <span class="meet-room"><i class="icon-address"></i> 五楼三号会议室</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+

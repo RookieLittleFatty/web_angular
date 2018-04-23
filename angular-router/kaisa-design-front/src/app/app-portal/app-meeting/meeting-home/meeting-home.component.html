@@ -1,0 +1,173 @@
+<app-header [title]="'会议管理'" (backEmit)="goback()"></app-header>
+<ul class="content-tab">
+  <li class="content-tab-li" [ngClass]="{'active': tabIndex === 1}" (click)="changeTab(1)"><div>会议提醒</div></li>
+  <li class="content-tab-li" [ngClass]="{'active': tabIndex === 2}" (click)="changeTab(2)"><div>历史会议</div></li>
+</ul>
+<div class="content-container" *ngIf="tabIndex === 1">
+  <ul class="card-list">
+    <li class="card-item">
+        <div class="card-sub card-time">2018-04-01 12:08</div>
+        <div class="card-sub card-faqi">我发起的会议</div>
+        <div class="card-icon">
+          <img src="../../../../assets/icons/mett_03.png" alt="">
+        </div>
+        <div>
+          <h5 class="card-caption">测试</h5>
+          <div class="card-info">
+            <span class="info-item">
+              <i class="info-icon star-icon"></i>
+              <span>发起人：小张</span>
+            </span>
+            <span class="info-item">
+              <i class="info-icon vip-icon"></i>
+              <span>参会领导：小张</span>
+            </span>
+          </div>
+        </div>
+    </li>
+    <li class="card-item">
+      <div class="card-sub card-time">2018-04-01 12:08</div>
+      <div class="card-sub card-faqi">我发起的会议</div>
+      <div class="card-icon">
+        <img src="../../../../assets/icons/mett_03.png" alt="">
+      </div>
+      <div>
+        <h5 class="card-caption">测试</h5>
+        <div class="card-info">
+            <span class="info-item">
+              <i class="info-icon star-icon"></i>
+              <span>发起人：小张</span>
+            </span>
+          <span class="info-item">
+              <i class="info-icon vip-icon"></i>
+              <span>参会领导：小张</span>
+            </span>
+        </div>
+      </div>
+    </li>
+    <li class="card-item">
+      <div class="card-sub card-time">2018-04-01 12:08</div>
+      <div class="card-sub card-faqi">我发起的会议</div>
+      <div class="card-icon">
+        <img src="../../../../assets/icons/mett_03.png" alt="">
+      </div>
+      <div>
+        <h5 class="card-caption">测试</h5>
+        <div class="card-info">
+            <span class="info-item">
+              <i class="info-icon star-icon"></i>
+              <span>发起人：小张</span>
+            </span>
+          <span class="info-item">
+              <i class="info-icon vip-icon"></i>
+              <span>参会领导：小张</span>
+            </span>
+        </div>
+      </div>
+    </li>
+    <li class="card-item">
+      <div class="card-sub card-time">2018-04-01 12:08</div>
+      <div class="card-sub card-faqi">我发起的会议</div>
+      <div class="card-icon">
+        <img src="../../../../assets/icons/mett_03.png" alt="">
+      </div>
+      <div>
+        <h5 class="card-caption">测试</h5>
+        <div class="card-info">
+            <span class="info-item">
+              <i class="info-icon star-icon"></i>
+              <span>发起人：小张</span>
+            </span>
+          <span class="info-item">
+              <i class="info-icon vip-icon"></i>
+              <span>参会领导：小张</span>
+            </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="content-container" *ngIf="tabIndex === 2">
+  <ul class="card-list">
+    <li class="card-item" (click)="viewDetail()">
+      <div class="card-sub card-time">2018-04-01 12:08</div>
+      <div class="card-sub card-faqi">已参加会议</div>
+      <div class="card-icon">
+        <img src="../../../../assets/icons/mett_03.png" alt="">
+      </div>
+      <div>
+        <h5 class="card-caption">测试</h5>
+        <div class="card-info">
+            <span class="info-item">
+              <i class="info-icon star-icon"></i>
+              <span>发起人：小张</span>
+            </span>
+          <span class="info-item">
+              <i class="info-icon vip-icon"></i>
+              <span>参会领导：小张</span>
+            </span>
+        </div>
+      </div>
+    </li>
+    <li class="card-item">
+      <div class="card-sub card-time">2018-04-01 12:08</div>
+      <div class="card-sub card-faqi">未参加会议</div>
+      <div class="card-icon">
+        <img src="../../../../assets/icons/mett_03.png" alt="">
+      </div>
+      <div>
+        <h5 class="card-caption">测试</h5>
+        <div class="card-info">
+            <span class="info-item">
+              <i class="info-icon star-icon"></i>
+              <span>发起人：小张</span>
+            </span>
+          <span class="info-item">
+              <i class="info-icon vip-icon"></i>
+              <span>参会领导：小张</span>
+            </span>
+        </div>
+      </div>
+    </li>
+    <li class="card-item">
+      <div class="card-sub card-time">2018-04-01 12:08</div>
+      <div class="card-sub card-faqi">已参加会议</div>
+      <div class="card-icon">
+        <img src="../../../../assets/icons/mett_03.png" alt="">
+      </div>
+      <div>
+        <h5 class="card-caption">测试</h5>
+        <div class="card-info">
+            <span class="info-item">
+              <i class="info-icon star-icon"></i>
+              <span>发起人：小张</span>
+            </span>
+          <span class="info-item">
+              <i class="info-icon vip-icon"></i>
+              <span>参会领导：小张</span>
+            </span>
+        </div>
+      </div>
+    </li>
+    <li class="card-item">
+      <div class="card-sub card-time">2018-04-01 12:08</div>
+      <div class="card-sub card-faqi">已参加会议</div>
+      <div class="card-icon">
+        <img src="../../../../assets/icons/mett_03.png" alt="">
+      </div>
+      <div>
+        <h5 class="card-caption">测试</h5>
+        <div class="card-info">
+            <span class="info-item">
+              <i class="info-icon star-icon"></i>
+              <span>发起人：小张</span>
+            </span>
+          <span class="info-item">
+              <i class="info-icon vip-icon"></i>
+              <span>参会领导：小张</span>
+            </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

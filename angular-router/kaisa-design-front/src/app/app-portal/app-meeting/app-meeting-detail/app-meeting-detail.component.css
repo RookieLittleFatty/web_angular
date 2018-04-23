@@ -1,0 +1,76 @@
+.member-list{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 15px;
+}
+.member-list-li{
+  list-style: none;
+  float: left;
+  width: 20%;
+  margin-bottom: 10px;
+}
+.member-photo{
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #eee;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.member-status{
+  color: #999;
+}
+.more-member{
+  text-align: center;
+  padding: 5px;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  color: #999;
+}
+
+.app-list{
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+}
+.app-list-li{
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 10px 15px 10px 80px;
+  position: relative;
+  text-align: right;
+}
+.app-list-label{
+  position: absolute;
+  width: 80px;
+  left: 15px;
+  top: 10px;
+  text-align: left;
+  color: #999;
+}
+.sign-title{
+  padding: 10px 15px 15px;
+  margin-top: 15px;
+}
+.sign-code {
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
+  float: left;
+  margin-right: 5px;
+}
+.sign-code img{
+  width: 100%;
+  height: auto;
+}
+.pb10{
+  padding-bottom: 15px;
+}
+.detail-block-text{
+  padding: 0 15px;
+}
+

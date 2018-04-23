@@ -1,0 +1,136 @@
+<div class="tab-content" [style.display]="isDetail ? 'none': 'block'">
+  <div class="search-group">
+    <div class="f-l">
+      <label for="meetingTopic">会议议题 ：</label>
+      <input type="text" id="meetingTopic" class="search-input" name="topic" placeholder="支持模糊查询">
+    </div>
+    <div class="f-l ml40">
+      <label>会议时间 ：</label>
+      <input type="text" name="timeStart" class="search-input" bsDatepicker [minDate]="minDate" [maxDate]="maxDate" [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD h:mm:ss a', containerClass: 'theme-orange'}">
+      <span class="greyLine"></span>
+      <input type="text" name="timeEnd" class="search-input" bsDatepicker [minDate]="minDate" [maxDate]="maxDate" [bsConfig]="{ dateInputFormat: 'YYYY/MM/DD h:mm:ss a', containerClass: 'theme-orange'}">
+    </div>
+  </div>
+  <div class="search-group">
+    <div class="f-l">
+      <label>发起部门 ：</label>
+      <div class="select-box">
+        <select name="department" class="search-input">
+          <option value="">全部</option>
+        </select>
+        <i class="solid-arrow solid-arrow-down"></i>
+      </div>
+    </div>
+    <div class="f-r">
+      <button type="button" class="zjy-btn zjy-btn-oranger" (click)="add()">筛选</button>
+    </div>
+  </div>
+  <div class="search-group">
+    <table class="reportListTable" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>编号</th>
+        <th>议题</th>
+        <th>时间</th>
+        <th>地点</th>
+        <th>发起部门</th>
+        <th>发起人</th>
+        <th>状态</th>
+      </tr>
+      <tr (click)="viewDetail()">
+        <td>1</td>
+        <td>关于XX会议</td>
+        <td>2018-02-12</td>
+        <td>会议室1</td>
+        <td>设计部</td>
+        <td>万凯</td>
+        <td>已完成</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>关于XX会议</td>
+        <td>2018-02-12</td>
+        <td>会议室1</td>
+        <td>设计部</td>
+        <td>万凯</td>
+        <td>已完成</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>关于XX会议</td>
+        <td>2018-02-12</td>
+        <td>会议室1</td>
+        <td>设计部</td>
+        <td>万凯</td>
+        <td>已完成</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>关于XX会议</td>
+        <td>2018-02-12</td>
+        <td>会议室1</td>
+        <td>设计部</td>
+        <td>万凯</td>
+        <td>已完成</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>关于XX会议</td>
+        <td>2018-02-12</td>
+        <td>会议室1</td>
+        <td>设计部</td>
+        <td>万凯</td>
+        <td>已完成</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>关于XX会议</td>
+        <td>2018-02-12</td>
+        <td>会议室1</td>
+        <td>设计部</td>
+        <td>万凯</td>
+        <td>已完成</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="tab-content pt30" [style.display]="isDetail ? 'block': 'none'">
+  <div class="info-group">
+    <div class="third-percent">
+      <span class="info-label">会议主题 ：</span>
+      <span class="info-text">测试</span>
+    </div>
+    <div class="third-percent">
+      <span class="info-label">会议时间 ：</span>
+      <span class="info-text">2018-04-09 12:00 -13:00</span>
+    </div>
+    <div class="third-percent">
+      <span class="info-label">会议地点 ：</span>
+      <span class="info-text">3号会议室</span>
+    </div>
+  </div>
+  <div class="info-group">
+    <div class="third-percent">
+      <span class="info-label">会议发起人 ：</span>
+      <span class="info-text">冯小刚</span>
+    </div>
+    <div class="third-percent">
+      <span class="info-label">参会领导 ：</span>
+      <span class="info-text">徐峥</span>
+    </div>
+  </div>
+  <div class="info-group">
+    <div>
+      <span class="info-label">参会人员 ：</span>
+      <span class="info-text">赵丽颖，李易峰，范冰冰，景甜，刘昊然，胡歌，刘涛</span>
+    </div>
+  </div>
+  <div class="info-group">
+    <span class="info-label">会议决议 ：</span>
+    <div class="info-text pr20">
+      <textarea class="jzy-textarea width-100"></textarea>
+    </div>
+  </div>
+  <div class="text-center pd20">
+    <button type="button" class="zjy-btn" (click)="goBackList()">返回列表</button>
+  </div>
+</div>

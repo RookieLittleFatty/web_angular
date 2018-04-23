@@ -1,0 +1,8 @@
+<div class="w-1263 detail-box">
+  <ul class="tab-list">
+    <li class="tab-item" [ngClass]="{'active': tabIndex === 1}" (click)="changeTab(1)">文档中心</li>
+    <li class="tab-item" [ngClass]="{'active': tabIndex === 2}" (click)="changeTab(2)">统计分析</li>
+  </ul>
+  <app-document *ngIf="tabIndex === 1"></app-document>
+  <app-statistics *ngIf="tabIndex === 2"></app-statistics>
+</div>

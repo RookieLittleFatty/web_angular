@@ -1,0 +1,22 @@
+<div class="app-header" style="display: none;">
+  <i class="fa fa-angle-left back-icon" (click)="goBack()"></i>
+  <h2 class="header-title">{{title}}</h2>
+  <i class="scan-icon"></i>
+</div>
+<div class="app-content">
+  <router-outlet (activate)='onActivate($event)'></router-outlet>
+</div>
+<div class="app-tab">
+  <a href="javascript:;" class="app-tab-link" routerLink="meeting" routerLinkActive="active">
+    <i class="tab-icon meeting-tab"></i>
+    <p>会议</p>
+  </a>
+  <a href="javascript:;" class="app-tab-link" routerLink="inspect" routerLinkActive="active">
+    <i class="tab-icon inspect-tab"></i>
+    <p>巡检</p>
+  </a>
+  <a href="javascript:;" class="app-tab-link" routerLink="todo" routerLinkActive="active">
+    <i class="tab-icon todo-tab"></i>
+    <p>待办</p>
+  </a>
+</div>

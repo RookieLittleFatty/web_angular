@@ -1,0 +1,40 @@
+.task-top{
+  position: relative;
+  height: 41px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #ffffff;
+  background: linear-gradient(45deg, #f4f6fa 0%, #fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f6fa', endColorstr='#fff', GradientType=1);
+  line-height: 40px;
+  font-size: 14px;
+}
+.module-name{
+  background-color: #e70;
+  display: inline-block;
+  line-height: 40px;
+  padding:0 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.a-more{
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 40px;
+  padding:0 20px;
+  color: #363c47;
+}
+span.article-gg{
+  float: left;
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1;
+  padding-bottom: 15px;
+}
+.w-280{
+  width: 280px;
+}
+.w-565{
+  width: 565px;
+}

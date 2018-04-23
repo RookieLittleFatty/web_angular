@@ -1,0 +1,603 @@
+<div class="w-1263 detail-box">
+	<ul class="tab-list">
+		<li class="tab-item" [ngClass]="{'active': tabIndex === 1}" (click)="changeTab(1)">汇总分析</li>
+		<li class="tab-item" [ngClass]="{'active': tabIndex === 2}" (click)="changeTab(2)">项目进度分析 </li>
+		<li class="tab-item" [ngClass]="{'active': tabIndex === 3}" (click)="changeTab(3)">变更分析</li>
+		<li class="tab-item" [ngClass]="{'active': tabIndex === 4}" (click)="changeTab(4)">建筑指标分析</li>
+		<li class="tab-item" [ngClass]="{'active': tabIndex === 5}" (click)="changeTab(5)">巡检分析</li>
+	</ul>
+	<div class="tab-content">
+		<div class="search-group">
+
+			<!-- 个人 -->
+			<div class="reportTable" *ngIf="tabIndex === 1">
+				<table class="reportListTable" cellspacing="0" cellpadding="0">
+				<tr>
+					<th colspan="3" ></th>
+					<th colspan="2">审图</th>
+					<th colspan="2">会议</th>
+					<th colspan="2">巡查</th>
+					<th colspan="2">标准</th>
+					<th colspan="2">优化</th>
+				</tr>
+				<tr>
+				    <td colspan="3"></td> 
+					<td>数量</td>
+					<td>有效</td>
+					<td>数量</td>
+					<td>意见数</td>
+					<td>数量</td>
+					<td>有效</td>
+					<td>数量</td>
+					<td>执行</td>
+					<td>数量</td>
+					<td>金额</td>
+				</tr>
+				<tr>  
+				    <td rowspan="12">项目A汇总</td>
+					<td rowspan="3">个人</td>
+					<td>个人1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>个人2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					
+					<td>个人3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="3">专业</td>
+					<td>专业1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>专业2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>专业3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="3">部门</td>
+					<td>部门1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>部门2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>部门3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="3">供方</td>
+					<td>供方1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>供方2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>供方3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<!-- 项目B -->
+				<tr>  
+				    <td rowspan="12">项目B汇总</td>
+					<td rowspan="3">个人</td>
+					<td>个人1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>个人2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					
+					<td>个人3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="3">专业</td>
+					<td>专业1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>专业2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>专业3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="3">部门</td>
+					<td>部门1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>部门2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>部门3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="3">供方</td>
+					<td>供方1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>供方2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>供方3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				</table>
+				
+			</div>
+			<!-- 部门 -->
+			<div class="reportTable" *ngIf="tabIndex === 2">
+				<table class="reportListTable" cellspacing="0" cellpadding="0">
+					<tr>
+						<th colspan="2"></th>
+						<th >开始时间</th>
+						<th >结束时间</th>
+					</tr>
+					<tr>
+						<td rowspan="3">项目A</td>
+						<td>供方A</td>
+						<td></td>
+						<td></td>
+				  	</tr>
+				  	<tr>
+						<td>供方B</td>
+						<td></td>
+						<td></td>
+				  	</tr>
+				  	<tr>
+						<td>供方C</td>
+						<td></td>
+						<td></td>
+				  	</tr>
+				  	<tr>
+						<td rowspan="3">项目B</td>
+						<td>供方A</td>
+						<td></td>
+						<td></td>
+				  	</tr>
+				  	<tr>
+						<td>供方B</td>
+						<td></td>
+						<td></td>
+				  	</tr>
+				  	<tr>
+						<td>供方C</td>
+						<td></td>
+						<td></td>
+				  	</tr>
+				</table>
+			</div>
+			<!-- 公司 -->
+			<div class="reportTable" *ngIf="tabIndex === 3">
+				<table class="reportListTable" cellspacing="0" cellpadding="0">
+					<tr>
+						<th rowspan="2">项目A</th>
+						<th>变更数量</th>
+						<th>变更金额</th>
+						<th>无效变更率</th>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>供方</td>
+						<td>变更名称</td>
+						<td>变更时间</td>
+						<td>变更金额</td>
+					</tr>
+					<tr>
+					   
+						<td >供方1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>供方2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td >供方3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<!-- 集团 -->
+			<div class="reportTable" *ngIf="tabIndex === 4">
+				<table class="reportListTable" cellspacing="0" cellpadding="0">
+				<tr>
+					<th colspan="2"></th>
+					<th colspan="4">起始指标</th>
+					<th colspan="4">成果指标</th>
+				</tr>
+				<tr>
+					<td colspan="2"></td>
+					<td>计容面积</td>
+					<td>钢筋指标</td>
+					<td>指标</td>
+					<td>单车面积指标</td>
+					<td>计容面积</td>
+					<td>钢筋指标</td>
+					<td>指标</td>
+					<td>单车面积指标</td>
+				</tr>
+				<tr>
+					<td rowspan="3">项目A</td>
+					<td>供方A</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					
+				</tr>
+				<tr>
+					<td>供方B</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>				
+				</tr>
+				<tr>
+					<td>供方C</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="3">项目B</td>
+					<td>供方A</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					
+				</tr>
+				<tr>
+					<td>供方B</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>				
+				</tr>
+				<tr>
+					<td>供方C</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				</table>
+			</div>
+
+			<div class="reportTable" *ngIf="tabIndex === 5">
+				<table class="reportListTable" cellspacing="0" cellpadding="0">
+						<tr>
+							<th>项目A</th>
+							<th>建筑</th>
+							<th>结构</th>
+							<th>机电</th>
+							<th>园林</th>
+							<th>装饰</th>
+							<th>合计</th>
+						</tr>
+						<tr>
+							<td>设计缺陷</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>未按图</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>品质问题</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>成本优化</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>优秀做法</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+				</table>
+				<div class="clearfix ">
+					<div class="f-l chart-container"><img src="../../../assets/images/echart.jpg" alt=""></div>
+					<div class="f-l chart-container"><img src="../../../assets/images/echart.jpg" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

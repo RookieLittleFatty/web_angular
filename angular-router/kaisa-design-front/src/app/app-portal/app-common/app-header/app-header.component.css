@@ -1,0 +1,40 @@
+.app-header {
+  height: 44px;
+  background: #ee7700;
+  color: #fff;
+  position: fixed;
+  left:0;
+  right:0;
+  top:0;
+  width: 100%;
+  z-index: 9999;
+}
+.back-icon{
+  font-size: 26px;
+  position: absolute;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  margin-top: -15px;
+  text-align: center;
+}
+.scan-icon{
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background: url(../../../../assets/icons/scans.png) no-repeat center;
+  background-size: 100%;
+  right: 10px;
+  top: 50%;
+  margin-top: -12px;
+}
+.header-title{
+  font-weight: normal;
+  text-align: center;
+  margin: 0 40px;
+  padding-top: 13px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: bold;
+}

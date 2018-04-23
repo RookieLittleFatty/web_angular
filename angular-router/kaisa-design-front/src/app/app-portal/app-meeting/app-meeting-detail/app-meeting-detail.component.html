@@ -1,0 +1,158 @@
+<app-header [title]="headerTitle" (backEmit)="goback()"></app-header>
+<div [style.display]="moreFlag? 'none': 'block'">
+  <div class="bg-fff">
+    <ul class="member-list clearfix">
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>张艺谋</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>赵丽颖</p>
+          <p class="member-status">已签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>范冰冰</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>刘昊然</p>
+          <p class="member-status">已签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>景甜</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+    </ul>
+    <div class="more-member" (click)="viewMore()">查看更多</div>
+  </div>
+
+  <ul class="app-list">
+    <li class="app-list-li">
+      <label class="app-list-label">会议主题</label>
+      <span class="app-list-value">测试</span>
+    </li>
+    <li class="app-list-li">
+      <label class="app-list-label">会议发起人</label>
+      <span class="app-list-value">张艺谋</span>
+    </li>
+    <li class="app-list-li">
+      <label class="app-list-label">参会领导</label>
+      <span class="app-list-value">王思聪</span>
+    </li>
+    <li class="app-list-li">
+      <label class="app-list-label">会议地点</label>
+      <span class="app-list-value">1号会议室</span>
+    </li>
+    <li class="app-list-li">
+      <label class="app-list-label">会议时间</label>
+      <span class="app-list-value">2018-04-01 12:00 - 13:00</span>
+    </li>
+  </ul>
+  <div class="bg-fff pb10">
+    <h5 class="sign-title">会议签到</h5>
+    <div class="clearfix">
+      <div class="sign-code"><img src="../../../../assets/icons/er_03.png" alt=""></div>
+      <div class="app-btn-group">
+        <button type="button" class="app-button orange-btn">会议签到</button>
+      </div>
+    </div>
+  </div>
+  <div class="bg-fff pb10">
+    <h5 class="sign-title">会议决议</h5>
+    <div class="detail-block-text">
+      经会议决定赵丽颖，李易峰为主演，张艺谋分，冯小刚为导演，王思聪任监制，韩寒为编剧。拍摄从2018年4月20日开始，为期三个月。
+    </div>
+  </div>
+  <div class="text-center mt20">
+    <button type="button" class="app-button" (click)="goback()">返回</button>
+  </div>
+</div>
+<div [style.display]="moreFlag? 'block': 'none'">
+  <div class="bg-fff mt20 mb30" >
+    <ul class="member-list clearfix">
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>张艺谋</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>赵丽颖</p>
+          <p class="member-status">已签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>范冰冰</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>刘昊然</p>
+          <p class="member-status">已签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>景甜</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>景甜</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>景甜</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>景甜</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+      <li class="member-list-li">
+        <div class="member-photo"><img src="" alt=""></div>
+        <div>
+          <p>景甜</p>
+          <p class="member-status">未签到</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="text-center">
+    <button type="button" class="app-button" (click)="goback()">返回</button>
+  </div>
+</div>
+
+

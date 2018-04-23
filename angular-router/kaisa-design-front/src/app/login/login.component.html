@@ -1,0 +1,127 @@
+<div class="container_bg"></div>
+<div class="container">
+  <div class="login_logo">
+    <img src="../../assets/images/login-logo.png" width="186px">
+  </div>
+  <ul class="loginInput">
+    <li class="inputContainer" [ngClass]="{'focus': focusIndex === 1}">
+      <input type="text" name="userName" id="userName" class="loginInput" required (focus)="focusIndex = 1"><a class="clear"></a>
+      <label for="userName">账号</label>
+    </li>
+    <li class="inputContainer" [ngClass]="{'focus': focusIndex === 2}">
+      <input type="password" name="password" id="password" class="loginInput" required (focus)="focusIndex = 2"><a class="clear"></a>
+      <label for="password">密码</label>
+    </li>
+    <li class="forgetPassword">
+      <input type="checkbox" id="remember" [(ngModel)]="isRemeber">
+      <label for="remember" [ngClass]="{'checked': isRemeber}">记住登录</label>
+      <a href="#">忘记密码？</a>
+    </li>
+    <li class="btnContainer">
+      <a href="javascript:;"  class="registerBtn" (click)="registerModal.show()">注  册</a>
+      <a href="javascript:;" routerLink="/designPlatform/home" class="loginBtn">登  录</a>
+    </li>
+  </ul>
+</div>
+<div class="modal fade" bsModal #registerModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg jzy-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">设计院注册</h4>
+      </div>
+      <div class="modal-body">
+        <div class="topInputContainer">
+          <div class="topInputItem">
+            <label class="topInputItemTitle">城市</label>
+            <input type="text" name="cityName" [(ngModel)]="registerEntity.cityName" (blur)="selectedProject()">
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">项目</label>
+            <div class="select-parent">
+              <select name="projectCode" [(ngModel)]="registerEntity.projectCode">
+                <option *ngFor="let project of projectList" [value]="project.projectCode">{{project.projectName}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">项目负责人</label>
+            <input type="text" name="projectMan" [(ngModel)]="registerEntity.projectMan">
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">手机号</label>
+            <input type="text" name="mainPersonTelephone" [(ngModel)]="registerEntity.mainPersonTelephone">
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">设计院名称</label>
+            <input type="text" name="designInstituteName" [(ngModel)]="registerEntity.designInstituteName">
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">类型</label>
+            <div class="select-parent">
+              <select name="category" [(ngModel)]="registerEntity.category" (ngModelChange)="changeType()">
+                <option *ngFor="let type of typeList" [ngValue]="type.paramValueCode">{{type.paramValueName}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">姓名</label>
+            <input type="text" name="jointerName" [(ngModel)]="registerEntity.jointerName">
+          </div>
+          <div class="topInputItem">
+            <label class="topInputItemTitle">手机号</label>
+            <input type="text" name="jointerTelephone" [(ngModel)]="registerEntity.jointerTelephone">
+          </div>
+        </div>
+        <div class="tableContainer">
+          <div class="tableTitle">指标内容</div>
+          <div class="typeInputContainer" *ngIf="registerEntity.category">
+            <div class="typeInputItem" *ngFor="let quotaEntity of registerEntity.jzyRegistQuotaEntityList">
+              <label class="typeInputItemTitle">{{quotaEntity.registQuotaName}}</label>
+              <input type="text" name="quotaEntity.registQuotaCode" [(ngModel)]="quotaEntity.registQuotaValue">
+            </div>
+          </div>
+        </div>
+        <div class="tableContainer">
+          <div class="tableTitle">项目团队成员名单</div>
+          <div class="addBtnContainer">
+            <a href="javascript: void(0);" (click)="addRegisterMember()">添加组员</a>
+          </div>
+          <table class="menberListTable" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>专业</th>
+              <th>姓名</th>
+              <th>手机</th>
+              <th>邮箱</th>
+              <th>操作</th>
+            </tr>
+            <tr *ngFor="let member of registerEntity.jzyRegistOuterUserEntityList; let i =index;">
+              <td>
+                <div class="select-parent usable">
+                  <select name="major_{{i}}" [(ngModel)]="member.profession" [compareWith]="compareFun" [disabled]="member.status === 'unEdit'">
+                    <option [ngValue]="majorItem.paramValueCode" *ngFor="let majorItem of majorList">{{majorItem.paramValueName}}</option>
+                  </select>
+                </div>
+              </td>
+              <td><input type="text" name="name_{{i}}" [(ngModel)]="member.userName" [disabled]="member.status === 'unEdit'"></td>
+              <td><input type="text" name="phone_{{i}}" [(ngModel)]="member.telephone" [disabled]="member.status === 'unEdit'"></td>
+              <td><input type="text" name="email_{{i}}" [(ngModel)]="member.email" [disabled]="member.status === 'unEdit'"></td>
+              <td>
+                <a href="javascript:;" class="edit" *ngIf="member.status === 'unEdit'" (click)="editMember(i, member)">编辑</a>
+                <a href="javascript:;" class="save" *ngIf="member.status === 'edit'" (click)="saveMember(member)">保存</a>
+                <a href="javascript:;" class="delete" (click)="deleteMember(i)">删除</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="sumitContiner">
+          <a href="javascript: void(0);" class="sumitBtn" (click)="sureRegister()">提交</a>
+          <a href="javascript: void(0);" class="cancelBtn" (click)="registerModal.hide()">取消</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

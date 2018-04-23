@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <h4 class="modal-title">提示</h4>
+  <button type="button" class="close f-r" aria-label="Close" (click)="infoModal.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="pd20 modal-tip">{{message}}</div>
+</div>
+<div class="modal-footer">
+  <div class="text-center mt10">
+    <button type="button"  *ngIf="!typeFlag" class="zjy-btn zjy-btn-oranger" (click)="infoModal.hide()">确定</button>
+    <button type="button"  *ngIf="typeFlag" class="zjy-btn zjy-btn-oranger" (click)="sure()">{{sureText}}</button>
+    <button type="button" class="zjy-btn ml20" *ngIf="typeFlag" (click)="infoModal.hide()">取消</button>
+  </div>
+</div>

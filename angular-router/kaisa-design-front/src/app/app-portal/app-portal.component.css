@@ -1,0 +1,98 @@
+.app-header {
+  height: 44px;
+  background: #ee7700;
+  color: #fff;
+  position: fixed;
+  left:0;
+  right:0;
+  top:0;
+  width: 100%;
+}
+.back-icon{
+  font-size: 26px;
+  position: absolute;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  margin-top: -15px;
+  text-align: center;
+}
+.scan-icon{
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background: url(../../assets/icons/scans.png) no-repeat center;
+  background-size: 100%;
+  right: 10px;
+  top: 50%;
+  margin-top: -12px;
+}
+.header-title{
+  font-weight: normal;
+  text-align: center;
+  margin: 0 40px;
+  padding-top: 13px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.app-tab{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #FAF9F8;
+  color: #999;
+  border-top: 1px solid #eee;
+  /*box-shadow: -3px 0 3px rgba(0,0,0,0.2);*/
+}
+.app-tab-link{
+  text-align: center;
+  float: left;
+  width: 33.333%;
+  font-size: 12px;
+  line-height: 1;
+  display: block;
+  color: #999;
+}
+.tab-icon{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 6px 0 6px 0;
+}
+.inspect-tab{
+  background: url(../../assets/icons/inspect.png) no-repeat center;
+}
+.meeting-tab{
+  background:  url(../../assets/icons/meeting.png) no-repeat center;
+}
+.todo-tab{
+  background:  url(../../assets/icons/todo.png) no-repeat center;
+}
+.app-tab-link:hover,
+.app-tab-link.active{
+  color: #ee7700;
+}
+.app-tab-link:hover .inspect-tab,
+.app-tab-link.active .inspect-tab{
+  background: url(../../assets/icons/inspect-active.png) no-repeat center;
+}
+
+.app-tab-link:hover .meeting-tab,
+.app-tab-link.active .meeting-tab{
+  background: url(../../assets/icons/meeting-active.png) no-repeat center;
+}
+.app-tab-link:hover .todo-tab,
+.app-tab-link.active .todo-tab{
+  background: url(../../assets/icons/todo-active.png) no-repeat center;
+}
+.app-content{
+  margin: 44px 0 60px 0;
+}

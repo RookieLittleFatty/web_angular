@@ -1,0 +1,54 @@
+.listTitle{
+  height:40px;
+  background-color:#fff;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  border-bottom:1px solid #e8e8e8;
+}
+
+.listTitle span.tip{
+  display: block;
+  background-color: #ed7701;
+  height: 18px;
+  width: 5px;
+  margin-left: 15px;
+  margin-top: 10px;
+  float: left;
+}
+
+.listTitle span.text{
+  display: block;
+  margin-left: 10px;
+  color: #353d47;
+  line-height: 17px;
+  font-size:16px;
+  font-weight: bold;
+  float: left;
+  margin-top: 10px;
+}
+.reportTable{
+  padding: 30px;
+}
+.statusGreen {
+  color:#8ec220;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.statusOrange {
+  color:#fdac1f;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.statusGery {
+  color:#d2d2d2;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+table.reportListTable tbody{
+  cursor: pointer;
+}
+table.reportListTable tr:hover td {
+  background: #f5f5f5;
+}
