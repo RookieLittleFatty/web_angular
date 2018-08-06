@@ -1,0 +1,10 @@
+.nav{
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  background: lightgreen;
+}
+.nav.active{
+  color: #ee7700;
+  font-weight: bold;
+}

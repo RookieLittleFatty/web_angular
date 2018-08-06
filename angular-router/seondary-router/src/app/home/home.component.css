@@ -1,0 +1,12 @@
+.left{
+  width: 200px;
+  height: 600px;
+  background: lightblue;
+  display: inline-block;
+}
+.right{
+  width: 500px;
+  margin-left: 30px;
+  display: inline-block;
+  background: lightcoral;
+}
