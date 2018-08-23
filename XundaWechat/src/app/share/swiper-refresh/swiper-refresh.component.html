@@ -1,0 +1,7 @@
+<swiper class="refresh-swiper" [config]="refreshConfig" (swiperTouchMove)="touchMove()" (swiperTouchEnd)="touchEnd()" #refresher="ngxSwiper">
+  <div class="content-container">
+    <div class="app-refresh" [style.position]="refreshPos"><i class="fa" [ngClass]="{'fa-long-arrow-down': refreshFlag === 1, ' fa-refresh': refreshFlag === 2 || refreshFlag===3, 'fa-spin': refreshFlag ===3 }"></i><span class="ml8">{{refreshTip}}</span></div>
+    <ng-content></ng-content>
+    <div class="app-loadMore" *ngIf="!disableLoad && (totalItem > listLength) ">{{loadMoreTip}}</div>
+  </div>
+</swiper>

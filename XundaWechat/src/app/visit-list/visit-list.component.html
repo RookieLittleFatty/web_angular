@@ -1,0 +1,26 @@
+<div class="header-box">
+  <i class="fa fa-angle-left back" routerLink="../"></i>
+  <div class="topic">拜访列表</div>
+  <span class="add-icon"></span>
+</div>
+<div class="load-container">
+  <app-swiper-refresh [totalItem]="16" [listLength]="weekVisitList.length">
+    <a href="javascript:;" class="app-card" *ngFor="let visit of weekVisitList" (click)="viewDetail()" routerLink="./1">
+      <div class="card-content">
+        <div class="weui-flex align-center">
+          <i class="fa fa-vcard client-icon"></i>
+          <div class="weui-flex__item ellipse"><b>{{visit.company}}</b></div>
+        </div>
+        <div class="weui-flex align-center">
+          <div class="ellipse weui-flex__item">
+            计划拜访时间：{{visit.time}}
+          </div>
+          <div class="day-mark">
+            <i class="fa fa-calendar-o"></i>
+            <span class="specific-day">{{paramDay | slice: 8}}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </app-swiper-refresh>
+</div>
