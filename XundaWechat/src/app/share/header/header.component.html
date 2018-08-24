@@ -1,0 +1,45 @@
+<div class="header-box">
+  <i class="fa fa-angle-left back" *ngIf="showBack"  (click)="back()"></i>
+  <div class="topic">{{headerName}}</div>
+  <span class="add-icon" (click)="add()" *ngIf="showAddIcon"></span>
+</div>
+<div class="app-pop-page" *ngIf="addClicked">
+  <div class="header-box">
+    <i class="fa fa-angle-left back" (click)="hide()"></i>
+    <div class="topic">新增拜访</div>
+  </div>
+  <div class="normal-content-box">
+    <div class="app-card">
+      <div class="card-content">
+        <div class="weui-flex">
+          <label  class="card-label">合同号：</label>
+          <div class="weui-flex__item">
+            <input type="text" class="inline-input" placeholder="请输入">
+          </div>
+        </div>
+        <div class="weui-flex pt10">
+          <label  class="card-label">联系人电话：</label>
+          <div class="weui-flex__item">
+            <input type="text" class="inline-input"  placeholder="请输入">
+          </div>
+        </div>
+        <div class="weui-flex pt10">
+          <label  class="card-label">联系人姓名：</label>
+          <div class="weui-flex__item">
+            <input type="text" class="inline-input"  placeholder="请输入">
+          </div>
+        </div>
+        <div class="weui-flex pt10">
+          <label  class="card-label">拜访人：</label>
+          <div class="weui-flex__item">
+            <input type="text" class="inline-input"  placeholder="请输入">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="app-btn app-btn-primary">提交</button>
+      <button type="button" class="app-btn app-btn-default" (click)="hide()">返回</button>
+    </div>
+  </div>
+</div>

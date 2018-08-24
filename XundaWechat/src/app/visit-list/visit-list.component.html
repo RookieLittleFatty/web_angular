@@ -1,0 +1,22 @@
+<app-header [showBack]="true" [showAddIcon]="true" [headerName]="'拜访列表'" (onback)="goback()"></app-header>
+<div class="load-container">
+  <app-swiper-refresh [totalItem]="16" [listLength]="weekVisitList.length">
+    <a href="javascript:;" class="app-card" *ngFor="let visit of weekVisitList"  (click)="viewDetail(visit.id)">
+      <div class="card-content">
+        <div class="weui-flex align-center">
+          <i class="fa fa-vcard client-icon"></i>
+          <div class="weui-flex__item ellipse"><b>{{visit.company}}</b></div>
+        </div>
+        <div class="weui-flex align-center">
+          <div class="ellipse weui-flex__item">
+            计划拜访时间：{{visit.time}}
+          </div>
+          <div class="day-mark" (click)="chooseDate($event)">
+            <i class="fa fa-calendar-o"></i>
+            <span class="specific-day">{{paramDay | slice: 8}}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </app-swiper-refresh>
+</div>

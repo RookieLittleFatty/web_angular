@@ -1,0 +1,14 @@
+.card-label .fa{
+  vertical-align: middle;
+}
+.card-label span.ml8{
+  vertical-align: middle;
+}
+.text-list-li{
+  margin: 5px 0;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  list-style: none;
+  word-break: break-all;
+  line-height: 1.2;
+}
